@@ -1,10 +1,10 @@
 body {
-  background-color: #f9f7fe;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f9f4;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 a {
-  color: #885df1;
+  color: #7fbf7f;
 }
 
 .container {
@@ -21,7 +21,7 @@ h1 {
   font-weight: 800;
   font-size: 36px;
   line-height: 1.5;
-  color: #272044;
+  color: #1c2f1c;
 }
 
 .form-container {
@@ -49,13 +49,13 @@ form {
   width: 80%;
   font-size: 16px;
   border-radius: 50px;
-  line-height: #f9f7fe;
-  color: #272044;
+  line-height: #f4f9f4;
+  color: #1c2f1c;
 }
 
 .submit-button {
   margin-left: 10px;
-  background: #885df1;
+  background: #7fbf7f;
   color: white;
   border: none;
   width: 150px;
@@ -68,17 +68,33 @@ form {
   display: none;
 }
 
-.poem {
+.game {
   font-size: 16px;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   line-height: 2;
-  border-left: 3px solid #885df1;
+  border-left: 3px solid #7fbf7f;
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
 }
 
-.poem strong {
-  color: #885df1;
+.game strong {
+  color: #7fbf7f;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 footer {

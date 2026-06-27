@@ -1,5 +1,5 @@
-function displayPoem(response) {
-  new Typewriter("#poem", {
+function displaygame(response) {
+  new Typewriter("#game", {
     strings: response.data.answer,
     autoStart: true,
     delay: 1,
@@ -7,22 +7,23 @@ function displayPoem(response) {
   });
 }
 
-function generatePoem(event) {
+function generategame(event) {
   event.preventDefault();
 
   let instructionsInput = document.querySelector("#user-instructions");
   let apiKey = "5a6cade0fb0235906516oefa5tf3413e";
-  let prompt = `User instructions: Generate a French poem about ${instructionsInput.value}`;
+  let prompt = `User instructions: Generate a list of the top 5 ${instructionsInput.value} video games. Return only the game titles.
+  `;
   let context =
-    "You are a romantic Poem expert and love to write short poems. Your mission is to generate a 4 line poem using basic html and separate each line with a break. Make sure to follow the user instructions. Do not include a title.";
+    "You are a video game expert. Always respond ONLY with a numbered list of video games titles in HTML format. Each item must be on its own line, . Do not include any extra text, explanations, or formatting.";
   let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-  let poemElement = document.querySelector("#poem");
-  poemElement.classList.remove("hidden");
-  poemElement.innerHTML = `⌛ Generating a French poem about ${instructionsInput.value}...`;
+  let gameElement = document.querySelector("#game");
+  gameElement.classList.remove("hidden");
+  gameElement.innerHTML = `<span class="blink">⌛ Generating a list of ${instructionsInput.value} video games...</span>`;
 
-  axios.get(apiURL).then(displayPoem);
+  axios.get(apiURL).then(displaygame);
 }
 
-let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener("submit", generatePoem);
+let gameFormElement = document.querySelector("#game-generator-form");
+gameFormElement.addEventListener("submit", generategame);

@@ -6,20 +6,20 @@
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
-    <title>AI Generator</title>
+    <title>AI Video Game Generator</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>Welcome to the AI Add-on Project</h1>
+        <h1>Welcome to the AI Video Game Generator 🕹️</h1>
       </header>
 
       <main>
         <div class="form-container">
-          <form id="poem-generator-form">
+          <form id="game-generator-form">
             <input
               type="text"
-              placeholder="Enter the topic of the French poem"
+              placeholder="Enter a video game genre"
               autofocus
               required
               autocomplete="off"
@@ -28,10 +28,10 @@
             />
             <input type="submit" class="submit-button" />
           </form>
-          <div class="hint">i.e: Flower, Paris, Cheese</div>
+          <div class="hint">i.e: cozy, action-adventure, horror, etc...</div>
         </div>
 
-        <div class="poem hidden" id="poem"></div>
+        <div class="game hidden" id="game"></div>
       </main>
 
       <footer>
